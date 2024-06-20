@@ -1,0 +1,23 @@
+@function remify($value) {
+  $base-value: 16px;
+  $rem-value: math.div($value, $base-value);
+  @return $rem-value * 1rem;
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1190px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}

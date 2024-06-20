@@ -1,0 +1,95 @@
+@use "sass:math";
+@import "reset";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "variables";
+@import "functions_mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: $grey-color;
+}
+
+body:has(.header__checkbox:checked) {
+  overflow-y: hidden;
+}
+
+.container {
+  max-width: 1240px;
+  padding: 0 35px;
+  margin: 0 auto;
+
+  @include mobile {
+    padding: 0 20px;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Work Sans", sans-serif;
+  color: $violet-dark-color;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: remify(80px);
+  line-height: 110%;
+}
+
+h2 {
+  font-size: remify(40px);
+  line-height: 130%;
+}
+
+h3 {
+  font-size: remify(24px);
+  line-height: 130%;
+}
+
+h4 {
+  font-weight: 600;
+  line-height: 160%;
+  color: $violet-dark-color;
+}
+
+p {
+  line-height: 160%;
+}
+
+.link {
+  color: $violet-color;
+  font-size: remify(14px);
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: remify(0.14px);
+  text-decoration: none;
+}
+
+@import "btn";
+@import "header";
+@import "hero";
+@import "whoweare";
+@import "features";
+@import "testimonials";
+@import "footer";
+
+.link,
+.nav__link,
+.footer__social,
+.btn {
+  &:focus-visible {
+    outline: remify(2px) solid $violet-color;
+    outline-offset: remify(4px);
+    border-radius: 30px;
+  }
+}

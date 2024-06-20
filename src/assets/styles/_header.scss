@@ -1,0 +1,160 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-and-nav {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+  }
+
+  &__nav {
+    @include tablet {
+      display: none;
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      background-color: $white-color;
+      padding: 100px;
+      z-index: 2;
+    }
+  }
+
+  &__logo {
+    width: 44.68px;
+    height: 35px;
+    margin: 32.5px 0;
+  }
+
+  &__burger {
+    position: absolute;
+    height: 26px;
+    width: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+    z-index: 3;
+
+    @include tablet {
+      display: flex;
+      right: 35px;
+    }
+
+    @include mobile {
+      right: 20px;
+    }
+  }
+
+  &__btn {
+    @include tablet {
+      margin-right: 70px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    z-index: 6;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+
+    @include tablet {
+      display: block;
+      right: 35px;
+    }
+
+    @include mobile {
+      right: 20px;
+    }
+
+    &:checked {
+      & ~ .header__burger {
+        & .burger__line1 {
+          transform: rotate(45deg);
+        }
+
+        & .burger__line2 {
+          transform: scale(0);
+        }
+
+        & .burger__line3 {
+          transform: rotate(-45deg);
+        }
+      }
+
+      & ~ .header__nav {
+        display: flex;
+      }
+    }
+  }
+}
+
+.burger {
+  &__line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: $violet-dark-color;
+  }
+
+  &__line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &__line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &__line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 40px;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .header &__list {
+    @include tablet {
+      font-size: remify(24px);
+      align-items: center;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $grey-color;
+    font-weight: 500;
+    line-height: 160%;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: $violet-middle-color;
+    }
+  }
+}
