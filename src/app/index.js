@@ -1,2 +1,21 @@
 import "../assets/styles/style.scss";
+import arrowPurple from "../assets/images/arrow-purple.svg";
+import arrowWhite from "../assets/images/arrow-white.svg";
+import favicon from "../assets/images/favicon.ico";
+import bgImage1 from "../assets/images/bg-image-1.svg";
+import bgImage2 from "../assets/images/bg-image-2.svg";
+import bgImage3 from "../assets/images/bg-image-3.svg";
+import bgImage4 from "../assets/images/bg-image-4.svg";
+import bgImage5 from "../assets/images/bg-image-5.svg";
+import cardImage1 from "../assets/images/card-image.avif";
+import cardImage2 from "../assets/images/card-image2.avif";
+import cardImage3 from "../assets/images/card-image3.avif";
+import cardImage4 from "../assets/images/card-image4.avif";
+import firstScreenImg from "../assets/images/first-screen-img.avif";
+import image from "../assets/images/image.avif";
+import logo from "../assets/images/Logo.svg";
+import socials from "../assets/images/socials.svg";
+import testmonial1 from "../assets/images/testmonial-1.avif";
+import testmonial2 from "../assets/images/testmonial-2.avif";
+
 console.log("Hello World from main file!");
